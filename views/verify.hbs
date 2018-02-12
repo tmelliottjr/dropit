@@ -1,0 +1,24 @@
+
+<div class='row header vert-sp'>
+
+
+
+</div>
+<div class='row'>
+    <form action="/login" method="post">
+        <div class="row">
+            <div class="sm-one md-four column"></div>
+            <div class="sm-ten md-four column">
+                <!--Need form here to resend verification token-->
+                {{#if messages}}
+                    {{#each messages}}
+                        <p class='verify-message {{this.type}}'> {{this.message}} </p>
+                    {{/each}}
+                {{/if}}
+            </div>
+            <div class="sm-one md-four column"></div>
+        </div>
+
+
+    </form>
+</div>

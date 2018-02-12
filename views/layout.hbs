@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>{{title}}</title>
+    {{#each uploads}}
+        <meta property="og:image" content="{{ this.path }}" />
+    {{/each}}
+    <meta property="og:title" content="DropIt - Easy Image Sharing" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Drag n' Drop Image Upload Service" />
+    <meta property="og:url" content="https://www.dropit.us" />
+
+    <meta name="description" content="Drag n' Drop Image Upload Service" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <meta name="csrf-token" content="{{csrfToken}}">
+
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Noto+Sans|Muli:200,300|Raleway:200,300,400">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">-->
+
+    <link rel="stylesheet" type="text/css" href="/style.css">
+</head>
+
+<body>
+<div class="container-fluid" id="nav-head" >
+<div class="container">
+
+<nav class="navbar navbar-expand-lg navbar-toggleable">
+
+    <button class="navbar-toggler navbar-toggler-right justify-content-center" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+<ul class="navbar-nav justify">
+    <li>
+        <a href="/" class="navbar-brand">DropIt</a>
+    </li>
+</ul>
+
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav ml-md-auto">
+            <li class="nav-item">
+                <a href="/" class="nav-link {{indexActive}}">Home</a>
+            </li>
+            {{#if user}}
+                <li class="nav-item">
+                    <a href="/uploads" class="nav-link {{uploadActive}}">Uploads</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/logout" class="nav-link">Logout</a>
+                </li>
+            {{else}}
+                <li class="nav-item">
+                    <a href="/login" class="nav-link {{loginActive}}">Login</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/register" class="nav-link {{registerActive}}">Register </a>
+                </li>
+            {{/if}}
+        </ul>
+    </div>
+
+</nav>
+
+</div>
+</div>
+
+
+<div class="container-fluid" id="uploads">
+        {{{body}}}
+</div>
+
+<footer>
+    <div class="footer-copy">
+        &copy; 2018 <a href="/">Drop It</a>
+    </div>
+    <div class="footer-info">
+        <a href="#">Contact</a> | <a href="#">Privacy Policy</a> |  <a href="#">Terms</a>
+    </div>
+</footer>
+
+<!--Scripts-->
+<script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+<script type="text/javascript" src="/build.min.js"></script>
+</body>
+
+</html>

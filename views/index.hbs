@@ -1,0 +1,33 @@
+
+
+<div class="row vert-sp center-horiz">
+    <div class="col-sm-4"></div>
+    <div class="col-sm-4">
+        {{#if messages}} {{#each messages}}
+
+            <div class="alert {{this.type}}" role="alert">{{ this.message }}</div>
+
+        {{/each}} {{/if}}
+        <div class="instructions">
+            <p class="hidden-sm-down">Drop your images anywhere to upload.</p>
+        </div>
+        <label class="btn btn-outline-primary btn-lg">
+            Upload <input type="file" id="upload-manual" hidden>
+        </label>
+        <div class="row">
+            <div class="col loader-area vert-sp"></div>
+        </div>
+        <div class="row">
+            <div class="col alert alert-danger upload-error-alert"></div>
+        </div>
+    </div>
+    <div class="col-sm-4"></div>
+</div>
+
+<div class="upload-grid-container vert-sp">
+    <div class="upload-grid">
+        <upload-item v-for="upload in uploads" :upload="upload"></upload-item>
+    </div>
+</div>
+
+
