@@ -1,6 +1,6 @@
 module.exports = function (mailer, app) {
   mailer.extend(app, {
-    from: 'Drop It <no-reply@dropit.us>',
+    from: 'Drop It <no-reply@tomelliott.io>',
     host: 'smtp.mailgun.org',
     secureConnection: true,
     port: 465,

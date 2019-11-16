@@ -9,7 +9,7 @@ let config = {
 };
 
 if (process.env.NODE_ENV === 'production') {
-  config.appHost = 'dropit.us'
+  config.appHost = 'dropit.tomelliott.io'
 } else {
   config.appHost = 'localhost:8080'
 }
