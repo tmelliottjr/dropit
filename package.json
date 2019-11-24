@@ -27,7 +27,7 @@
     "hbs": "~4.0.1",
     "moment": "^2.18.1",
     "moment-timezone": "^0.5.13",
-    "mongoose": "^4.11.10",
+    "mongoose": "^5.7.12",
     "morgan": "~1.9.1",
     "multer": "^1.3.0",
     "multer-gcs": "git+https://github.com/tmelliottjr/multer-gcs.git",
